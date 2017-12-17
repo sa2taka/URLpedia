@@ -61,6 +61,8 @@ group :development do
   gem 'rufo'
   gem 'annotate'
   gem 'guard-rspec', require: false
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard' 
 end
 
 group :test do
