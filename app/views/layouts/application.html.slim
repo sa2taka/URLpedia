@@ -17,5 +17,10 @@ html
       .right.menu
         - if user_signed_in?
           = link_to destroy_user_session_path, method: :delete, class: "item"
-            == "#{semantic_icon(:sign, :in)} ログアウト"
+            == "#{semantic_icon(:sign, :out)}ログアウト"
+        - else
+          = link_to new_user_session_path, class: "item"
+            == "#{semantic_icon(:sign, :in)} ログイン"
+          = link_to new_user_registration_path, class: "item"
+            == "#{semantic_icon(:add, :user)} 登録"
     = yield
