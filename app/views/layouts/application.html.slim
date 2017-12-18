@@ -9,4 +9,13 @@ html
   body
     p.notice = notice
     p.alert = alert
+    .ui.inverted.menu
+      .header.item
+        | URLpedia
+      a.item
+        | hoge
+      .right.menu
+        - if user_signed_in?
+          = link_to destroy_user_session_path, method: :delete, class: "item"
+            == "#{semantic_icon(:sign, :in)} ログアウト"
     = yield
